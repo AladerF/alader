@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+
+    <appender name="fileAppender" class="ch.qos.logback.core.FileAppender">  
+    <file>F:/log.log</file>  
+    <encoder><!-- 必须指定，否则不会往文件输出内容 -->  
+        <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n</pattern>  
+    </encoder>  
+    <append>true</append>  
+    <prudent>false</prudent>  
+	</appender>  
+         
+    <!-- root级别   DEBUG -->
+    <root>
+        <!-- 打印debug级别日志及以上级别日志 -->
+        <level value="debug" />
+        <appender-ref ref="fileAppender"/>
+    </root>
+</configuration>
